@@ -10,7 +10,8 @@ Hardcoded version of myMMc with c equal to 1. We get MM1 system.
 We have to export number of messages currently in this module and add logging.
 
 ### switch1
-Create priority scheduling using exported number of messages from myMM1.
+- Create random scheduling.
+- Create priority scheduling using exported number of messages from myMM1.
 
 ### switch2
 Pass all received messages to output.

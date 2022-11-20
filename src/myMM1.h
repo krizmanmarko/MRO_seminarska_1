@@ -7,7 +7,7 @@ using namespace omnetpp;
 
 typedef std::list<cMessage *> jobsProcessingList;
 
-class myMMc : public cSimpleModule
+class myMM1 : public cSimpleModule
 {
 	private:
 		cQueue queue;
