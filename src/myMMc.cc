@@ -26,6 +26,7 @@ void myMMc::initialize()
 	c = par("c");	// MMc
 	jobsProcessing.clear();
 	length = 0;
+	updateDisplay(length);
 }
 
 void myMMc::handleMessage(cMessage *msg)
@@ -67,6 +68,6 @@ void myMMc::handleMessage(cMessage *msg)
 void myMMc::updateDisplay(int i)
 {
 	char buf[100];
-	sprintf(buf, "Q_length: %ld", (long) i);
+	sprintf(buf, "qlen: %d", i);
 	getDisplayString().setTagArg("t", 0, buf);
 }

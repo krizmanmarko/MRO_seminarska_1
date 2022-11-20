@@ -25,6 +25,7 @@ void myMM1::initialize()
 	serviceTime = par("serviceTime");
 	jobsProcessing.clear();
 	length = 0;
+	updateDisplay(length);
 }
 
 void myMM1::handleMessage(cMessage *msg)
@@ -66,6 +67,6 @@ void myMM1::handleMessage(cMessage *msg)
 void myMM1::updateDisplay(int i)
 {
 	char buf[100];
-	sprintf(buf, "Q_length: %ld", (long) i);
+	sprintf(buf, "qlen: %d", i);
 	getDisplayString().setTagArg("t", 0, buf);
 }

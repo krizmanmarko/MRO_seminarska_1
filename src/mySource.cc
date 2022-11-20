@@ -21,6 +21,7 @@ void mySource::initialize()
 
 	jobCounter = 0;
 	scheduleAt(startTime, generateJobMsg);
+	updateDisplay(jobCounter);
 }
 
 void mySource::handleMessage(cMessage *msg)
@@ -47,6 +48,6 @@ void mySource::handleMessage(cMessage *msg)
 void mySource::updateDisplay(int i)
 {
 	char buf[100];
-	sprintf(buf, "%ld", (long) i);
+	sprintf(buf, "%d", i);
 	getDisplayString().setTagArg("t", 0, buf);
 }

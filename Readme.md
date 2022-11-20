@@ -18,3 +18,12 @@ Pass all received messages to output.
 
 ## report
 Folder for latex sources.
+
+# TODO
+- [x] topology
+- [x] switch1 random
+- [ ] switch1 lbqf (least busy queue first)
+- [x] switch2
+- [ ] logging
+- [ ] simulation
+- [ ] report

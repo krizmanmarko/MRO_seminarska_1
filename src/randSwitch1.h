@@ -21,9 +21,6 @@ class randSwitch1 : public cSimpleModule
 	private:
 		int c;
 		std::list<myMM1> connectedMM1;
-		std::random_device rd;
-		std::mt19937 gen;
-		std::uniform_int_distribution<> distr;
 };
 
 #endif

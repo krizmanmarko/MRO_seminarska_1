@@ -8,6 +8,7 @@ mySink::~mySink() {};
 void mySink::initialize()
 {
 	sinked = 0;
+	updateDisplay(sinked);
 }
 
 void mySink::handleMessage(cMessage *msg)
@@ -20,6 +21,6 @@ void mySink::handleMessage(cMessage *msg)
 void mySink::updateDisplay(int i)
 {
 	char buf[100];
-	sprintf(buf, "%ld", (long) i);
+	sprintf(buf, "%d", i);
 	getDisplayString().setTagArg("t", 0, buf);
 }

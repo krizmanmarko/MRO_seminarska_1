@@ -15,6 +15,9 @@ class switch2 : public cSimpleModule
 		virtual void initialize();
 		virtual void handleMessage(cMessage *msg);
 		virtual void updateDisplay(int i);
+
+	private:
+		int count;
 };
 
 #endif
