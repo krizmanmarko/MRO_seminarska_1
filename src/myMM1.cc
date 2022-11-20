@@ -18,6 +18,11 @@ myMM1::~myMM1()
 	}
 }
 
+int myMM1::getLength()
+{
+	return this->length;
+}
+
 void myMM1::initialize()
 {
 	endServiceMsg = new cMessage("end");

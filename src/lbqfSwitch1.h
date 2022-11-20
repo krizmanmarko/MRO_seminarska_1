@@ -1,16 +1,15 @@
-#ifndef RANDSWITCH1_H_
-#define RANDSWITCH1_H_
+#ifndef LBQFSWITCH1_H_
+#define LBQFSWITCH1_H_
 
 #include <omnetpp.h>
-#include <random>
 
 using namespace omnetpp;
 
-class randSwitch1 : public cSimpleModule
+class lbqfSwitch1 : public cSimpleModule
 {
 	public:
-		randSwitch1();
-		virtual ~randSwitch1();
+		lbqfSwitch1();
+		virtual ~lbqfSwitch1();
 
 	protected:
 		virtual void initialize();
@@ -19,6 +18,9 @@ class randSwitch1 : public cSimpleModule
 
 	private:
 		int c;
+		std::vector<int> usageMM1;
+		void fetch_data();
+		int least_busy_queue_mm1();
 };
 
 #endif

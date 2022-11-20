@@ -10,13 +10,8 @@ static int rng(int a, int b)
 	return distr(gen);
 }
 
-randSwitch1::randSwitch1()
-{
-}
-
-randSwitch1::~randSwitch1()
-{
-}
+randSwitch1::randSwitch1() {};
+randSwitch1::~randSwitch1() {};
 
 void randSwitch1::initialize()
 {

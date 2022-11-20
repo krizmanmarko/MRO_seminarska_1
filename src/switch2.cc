@@ -2,8 +2,8 @@
 
 Define_Module(switch2);
 
-switch2::switch2() {}
-switch2::~switch2() {}
+switch2::switch2() {};
+switch2::~switch2() {};
 
 void switch2::initialize()
 {

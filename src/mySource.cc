@@ -7,9 +7,7 @@ mySource::mySource()
 	generateJobMsg = NULL;
 }
 
-mySource::~mySource()
-{
-}
+mySource::~mySource() {};
 
 void mySource::initialize()
 {

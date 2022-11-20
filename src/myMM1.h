@@ -20,6 +20,7 @@ class myMM1 : public cSimpleModule
 	public:
 		myMM1();
 		virtual ~myMM1();
+		int getLength();
 
 	protected:
 		virtual void initialize();
