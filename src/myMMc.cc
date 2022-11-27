@@ -20,6 +20,9 @@ myMMc::~myMMc()
 
 void myMMc::initialize()
 {
+    queueLengthSignal = registerSignal("queueLength");
+    utilSignal = registerSignal("util");
+
 	endServiceMsg = new cMessage("end");
 	capacity = par("capacity");
 	serviceTime = par("serviceTime");
@@ -27,6 +30,9 @@ void myMMc::initialize()
 	jobsProcessing.clear();
 	length = 0;
 	updateDisplay(length);
+
+	emit(queueLengthSignal,0);
+    emit(utilSignal,0.0);
 }
 
 void myMMc::handleMessage(cMessage *msg)
@@ -41,6 +47,7 @@ void myMMc::handleMessage(cMessage *msg)
 			if (hasMoreCapacity) {
 				queue.insert(msg);
 				length++;
+				emit(queueLengthSignal, length);
 			} else {
 				delete msg;
 			}
@@ -49,6 +56,7 @@ void myMMc::handleMessage(cMessage *msg)
 		jobsProcessingList::iterator msgIt;
 		for (msgIt = jobsProcessing.begin(); msgIt != jobsProcessing.end(); msgIt++) {
 			if ((*msgIt)->getId() == msg->getId()) {
+                emit(utilSignal, (jobsProcessing.size() / c));
 				jobsProcessing.erase(msgIt);
 				break;
 			}
@@ -57,6 +65,7 @@ void myMMc::handleMessage(cMessage *msg)
 		if (queue.isEmpty() == false) {
 			msg = check_and_cast<cMessage *>(queue.pop());
 			length--;
+			emit(queueLengthSignal, length);
 			msg->setKind(10);
 			jobsProcessing.push_back(msg);
 			scheduleAt(simTime() + serviceTime, msg);
@@ -68,6 +77,6 @@ void myMMc::handleMessage(cMessage *msg)
 void myMMc::updateDisplay(int i)
 {
 	char buf[100];
-	sprintf(buf, "qlen: %d", i);
+	sprintf(buf, "qlen: %d jobsProc: %d", i, jobsProcessing.size());
 	getDisplayString().setTagArg("t", 0, buf);
 }

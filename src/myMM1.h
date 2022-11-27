@@ -17,6 +17,9 @@ class myMM1 : public cSimpleModule
 		simtime_t serviceTime;
 		jobsProcessingList jobsProcessing;
 
+        simsignal_t queueLengthSignal;
+        simsignal_t utilSignal;
+
 	public:
 		myMM1();
 		virtual ~myMM1();

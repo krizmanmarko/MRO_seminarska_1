@@ -17,6 +17,9 @@ class myMMc : public cSimpleModule
 		simtime_t serviceTime;
 		int c;	// stevilo streznikov v SE
 		jobsProcessingList jobsProcessing;
+	    simsignal_t queueLengthSignal;
+	    simsignal_t utilSignal;
+
 
 	public:
 		myMMc();
