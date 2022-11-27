@@ -1,0 +1,55 @@
+version 3
+run k_MM1_rand-10-20221127-16:03:21-5740
+attr configname k_MM1_rand
+attr datetime 20221127-16:03:21
+attr datetimef 20221127-160321
+attr experiment k_MM1_rand
+attr inifile omnetpp.ini
+attr iterationvars "$time=1.5, $num=1, $0=47853, $1=24674, $2=96433"
+attr iterationvarsd time=1.5/num=1/47853/24674/96433
+attr iterationvarsf time=1.5,num=1,47853,24674,96433-
+attr measurement "$time=1.5, $num=1, $0=47853, $1=24674, $2=96433"
+attr network randkMM1
+attr processid 5740
+attr repetition 2
+attr replication #2
+attr resultdir results
+attr runnumber 10
+attr seedset 10
+itervar num 1
+itervar time 1.5
+config description "MM1 module k-times random"
+config network randkMM1
+config **.source.interArrivalTime "truncnormal(0.5s, 1.5s)"
+config **.serviceTime 1.5s
+config **.c 1
+config **.capacity 10000
+config record-eventlog false
+config **.scalar-recording true
+config **.vector-recording true
+config repeat 4
+config seed-1-mt 47853
+config seed-2-mt 24674
+config seed-3-mt 96433
+config output-vector-file k_MM1_rand-1-1.5-results/2.vec
+config output-scalar-file k_MM1_rand-1-1.5-results/2.sca
+
+par randkMM1.source typename "\"mySource\""
+par randkMM1.source maxJobs 10000
+par randkMM1.source numJobs 2
+par randkMM1.source interArrivalTime "truncnormal(0.5s, 1.5s)"
+attr unit s
+par randkMM1.source startTime 10s
+attr unit s
+par randkMM1.source stopTime 3600s
+attr unit s
+par randkMM1.sink typename "\"mySink\""
+par randkMM1.switch1 typename "\"randSwitch1\""
+par randkMM1.switch1 c 1
+par randkMM1.switch2 typename "\"switch2\""
+par randkMM1.mm1[0] typename "\"myMM1\""
+par randkMM1.mm1[0] capacity 10000
+par randkMM1.mm1[0] serviceTime 1.5s
+attr unit s
+par randkMM1 typename "\"randkMM1\""
+

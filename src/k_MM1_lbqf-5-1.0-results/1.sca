@@ -1,0 +1,71 @@
+version 3
+run k_MM1_lbqf-5-20221127-16:03:34-25264
+attr configname k_MM1_lbqf
+attr datetime 20221127-16:03:34
+attr datetimef 20221127-160334
+attr experiment k_MM1_lbqf
+attr inifile omnetpp.ini
+attr iterationvars "$time=1.0, $num=5, $0=45732, $1=35463, $2=67563"
+attr iterationvarsd time=1.0/num=5/45732/35463/67563
+attr iterationvarsf time=1.0,num=5,45732,35463,67563-
+attr measurement "$time=1.0, $num=5, $0=45732, $1=35463, $2=67563"
+attr network lbqfkMM1
+attr processid 25264
+attr repetition 1
+attr replication #1
+attr resultdir results
+attr runnumber 5
+attr seedset 5
+itervar num 5
+itervar time 1.0
+config description "MM1 module k-times lbqf"
+config network lbqfkMM1
+config **.interArrivalTime "truncnormal(uniform(0.5s, 1.5s), uniform(0.25s, 0.75s))"
+config **.serviceTime 1.0s
+config **.c 5
+config **.capacity 10000
+config record-eventlog false
+config **.scalar-recording true
+config **.vector-recording true
+config repeat 4
+config seed-1-mt 45732
+config seed-2-mt 35463
+config seed-3-mt 67563
+config output-vector-file k_MM1_lbqf-5-1.0-results/1.vec
+config output-scalar-file k_MM1_lbqf-5-1.0-results/1.sca
+
+par lbqfkMM1.source typename "\"mySource\""
+par lbqfkMM1.source maxJobs 10000
+par lbqfkMM1.source numJobs 2
+par lbqfkMM1.source interArrivalTime "truncnormal(uniform(0.5s, 1.5s), uniform(0.25s, 0.75s))"
+attr unit s
+par lbqfkMM1.source startTime 10s
+attr unit s
+par lbqfkMM1.source stopTime 3600s
+attr unit s
+par lbqfkMM1.sink typename "\"mySink\""
+par lbqfkMM1.switch1 typename "\"lbqfSwitch1\""
+par lbqfkMM1.switch1 c 5
+par lbqfkMM1.switch2 typename "\"switch2\""
+par lbqfkMM1.mm1[0] typename "\"myMM1\""
+par lbqfkMM1.mm1[0] capacity 10000
+par lbqfkMM1.mm1[0] serviceTime 1s
+attr unit s
+par lbqfkMM1.mm1[1] typename "\"myMM1\""
+par lbqfkMM1.mm1[1] capacity 10000
+par lbqfkMM1.mm1[1] serviceTime 1s
+attr unit s
+par lbqfkMM1.mm1[2] typename "\"myMM1\""
+par lbqfkMM1.mm1[2] capacity 10000
+par lbqfkMM1.mm1[2] serviceTime 1s
+attr unit s
+par lbqfkMM1.mm1[3] typename "\"myMM1\""
+par lbqfkMM1.mm1[3] capacity 10000
+par lbqfkMM1.mm1[3] serviceTime 1s
+attr unit s
+par lbqfkMM1.mm1[4] typename "\"myMM1\""
+par lbqfkMM1.mm1[4] capacity 10000
+par lbqfkMM1.mm1[4] serviceTime 1s
+attr unit s
+par lbqfkMM1 typename "\"lbqfkMM1\""
+

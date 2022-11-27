@@ -1,0 +1,55 @@
+version 3
+run MMc-11-20221127-11:38:40-7588
+attr configname MMc
+attr datetime 20221127-11:38:40
+attr datetimef 20221127-113840
+attr experiment MMc
+attr inifile omnetpp.ini
+attr iterationvars "$mean=uniform(0.5s, 1.5s), $dev=0.5*(uniform(0.5s, 1.5s)), $time=1.0, $num=5, $0=33434, $1=56673, $2=23567"
+attr iterationvarsd mean=uniform(0.5s,_1.5s)/dev=0.5#2a(uniform(0.5s,_1.5s))/time=1.0/num=5/33434/56673/23567
+attr iterationvarsf mean=uniform(0.5s,_1.5s),dev=0.5#2a(uniform(0.5s,_1.5s)),time=1.0,num=5,33434,56673,23567-
+attr measurement "$mean=uniform(0.5s, 1.5s), $dev=0.5*(uniform(0.5s, 1.5s)), $time=1.0, $num=5, $0=33434, $1=56673, $2=23567"
+attr network MMc
+attr processid 7588
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 11
+attr seedset 11
+itervar dev "0.5*(uniform(0.5s, 1.5s))"
+itervar mean "uniform(0.5s, 1.5s)"
+itervar num 5
+itervar time 1.0
+config description "MMc module"
+config network MMc
+config MMc.source.interArrivalTime "truncnormal(uniform(0.5s, 1.5s), 0.5*(uniform(0.5s, 1.5s)))"
+config MMc.mmc.serviceTime 1.0s
+config MMc.mmc.c 5
+config MMc.mmc.capacity 10000
+config record-eventlog false
+config **.scalar-recording true
+config **.vector-recording true
+config repeat 4
+config seed-1-mt 33434
+config seed-2-mt 56673
+config seed-3-mt 23567
+config output-vector-file MMc-5-1.0-results/3.vec
+config output-scalar-file MMc-5-1.0-results/3.sca
+
+par MMc.source typename "\"mySource\""
+par MMc.source maxJobs 10000
+par MMc.source numJobs 2
+par MMc.source interArrivalTime "truncnormal(uniform(0.5s, 1.5s), 0.5*uniform(0.5s, 1.5s))"
+attr unit s
+par MMc.source startTime 10s
+attr unit s
+par MMc.source stopTime 3600s
+attr unit s
+par MMc.mmc typename "\"myMMc\""
+par MMc.mmc capacity 10000
+par MMc.mmc c 5
+par MMc.mmc serviceTime 1s
+attr unit s
+par MMc.sink typename "\"mySink\""
+par MMc typename "\"MMc\""
+

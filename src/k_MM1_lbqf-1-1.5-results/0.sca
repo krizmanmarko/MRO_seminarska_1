@@ -1,0 +1,55 @@
+version 3
+run k_MM1_lbqf-8-20221127-16:03:34-25264
+attr configname k_MM1_lbqf
+attr datetime 20221127-16:03:34
+attr datetimef 20221127-160334
+attr experiment k_MM1_lbqf
+attr inifile omnetpp.ini
+attr iterationvars "$time=1.5, $num=1, $0=53542, $1=75335, $2=34542"
+attr iterationvarsd time=1.5/num=1/53542/75335/34542
+attr iterationvarsf time=1.5,num=1,53542,75335,34542-
+attr measurement "$time=1.5, $num=1, $0=53542, $1=75335, $2=34542"
+attr network lbqfkMM1
+attr processid 25264
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 8
+attr seedset 8
+itervar num 1
+itervar time 1.5
+config description "MM1 module k-times lbqf"
+config network lbqfkMM1
+config **.interArrivalTime "truncnormal(uniform(0.5s, 1.5s), uniform(0.25s, 0.75s))"
+config **.serviceTime 1.5s
+config **.c 1
+config **.capacity 10000
+config record-eventlog false
+config **.scalar-recording true
+config **.vector-recording true
+config repeat 4
+config seed-1-mt 53542
+config seed-2-mt 75335
+config seed-3-mt 34542
+config output-vector-file k_MM1_lbqf-1-1.5-results/0.vec
+config output-scalar-file k_MM1_lbqf-1-1.5-results/0.sca
+
+par lbqfkMM1.source typename "\"mySource\""
+par lbqfkMM1.source maxJobs 10000
+par lbqfkMM1.source numJobs 2
+par lbqfkMM1.source interArrivalTime "truncnormal(uniform(0.5s, 1.5s), uniform(0.25s, 0.75s))"
+attr unit s
+par lbqfkMM1.source startTime 10s
+attr unit s
+par lbqfkMM1.source stopTime 3600s
+attr unit s
+par lbqfkMM1.sink typename "\"mySink\""
+par lbqfkMM1.switch1 typename "\"lbqfSwitch1\""
+par lbqfkMM1.switch1 c 1
+par lbqfkMM1.switch2 typename "\"switch2\""
+par lbqfkMM1.mm1[0] typename "\"myMM1\""
+par lbqfkMM1.mm1[0] capacity 10000
+par lbqfkMM1.mm1[0] serviceTime 1.5s
+attr unit s
+par lbqfkMM1 typename "\"lbqfkMM1\""
+

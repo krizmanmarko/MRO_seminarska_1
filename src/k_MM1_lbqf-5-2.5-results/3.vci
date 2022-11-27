@@ -1,0 +1,88 @@
+file 568921 1669561416                                          
+version 3
+run k_MM1_lbqf-31-20221127-16:03:36-25264
+attr configname k_MM1_lbqf
+attr datetime 20221127-16:03:36
+attr datetimef 20221127-160336
+attr experiment k_MM1_lbqf
+attr inifile omnetpp.ini
+attr iterationvars "$time=2.5, $num=5, $0=33434, $1=56673, $2=23567"
+attr iterationvarsd time=2.5/num=5/33434/56673/23567
+attr iterationvarsf time=2.5,num=5,33434,56673,23567-
+attr measurement "$time=2.5, $num=5, $0=33434, $1=56673, $2=23567"
+attr network lbqfkMM1
+attr processid 25264
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 31
+attr seedset 31
+itervar num 5
+itervar time 2.5
+config description "MM1 module k-times lbqf"
+config network lbqfkMM1
+config **.interArrivalTime "truncnormal(uniform(0.5s, 1.5s), uniform(0.25s, 0.75s))"
+config **.serviceTime 2.5s
+config **.c 5
+config **.capacity 10000
+config record-eventlog false
+config **.scalar-recording true
+config **.vector-recording true
+config repeat 4
+config seed-1-mt 33434
+config seed-2-mt 56673
+config seed-3-mt 23567
+config output-vector-file k_MM1_lbqf-5-2.5-results/3.vec
+config output-scalar-file k_MM1_lbqf-5-2.5-results/3.sca
+
+vector 0 lbqfkMM1.mm1[0] queueLength:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "queue length"
+vector 1 lbqfkMM1.mm1[1] queueLength:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "queue length"
+vector 2 lbqfkMM1.mm1[2] queueLength:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "queue length"
+vector 3 lbqfkMM1.mm1[3] queueLength:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "queue length"
+vector 4 lbqfkMM1.mm1[0] util:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title resources
+vector 5 lbqfkMM1.mm1[1] util:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title resources
+vector 6 lbqfkMM1.mm1[2] util:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title resources
+vector 7 lbqfkMM1.mm1[3] util:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title resources
+vector 8 lbqfkMM1.mm1[4] queueLength:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "queue length"
+vector 9 lbqfkMM1.mm1[4] util:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title resources
+0	2415 80004 5 37681 10 3602.812579533472 2870 0 6 5187 13019
+1	82419 81276 10 37690 10.493569117521 3604.981613168728 2866 0 6 5185 12901
+2	163695 79000 15 37659 10.772827936253 3599.910723101616 2790 0 5 4407 10019
+3	242695 73126 20 37669 11.523550329678 3601.581814199042 2588 0 5 3914 8666
+4	315821 39484 21 37693 12.5 3605.312579533472 1438 1 1 1438 1438
+5	355305 40853 24 37696 12.993569117521 3607.481613168728 1438 1 1 1438 1438
+6	396158 40417 32 37675 13.272827936253 3602.410723101616 1426 1 1 1426 1426
+7	436575 38709 35 37684 14.023550329678 3604.081814199042 1372 1 1 1372 1372
+8	475284 60192 69 37672 17.181543982315 3602.320198782852 2124 0 5 3066 6682
+9	535476 33443 97 37687 19.681543982315 3604.820198782852 1180 1 1 1180 1180
+

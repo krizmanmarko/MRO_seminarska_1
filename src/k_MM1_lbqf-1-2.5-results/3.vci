@@ -1,0 +1,48 @@
+file 467069 1669561416                                          
+version 3
+run k_MM1_lbqf-27-20221127-16:03:35-25264
+attr configname k_MM1_lbqf
+attr datetime 20221127-16:03:35
+attr datetimef 20221127-160335
+attr experiment k_MM1_lbqf
+attr inifile omnetpp.ini
+attr iterationvars "$time=2.5, $num=1, $0=33434, $1=56673, $2=23567"
+attr iterationvarsd time=2.5/num=1/33434/56673/23567
+attr iterationvarsf time=2.5,num=1,33434,56673,23567-
+attr measurement "$time=2.5, $num=1, $0=33434, $1=56673, $2=23567"
+attr network lbqfkMM1
+attr processid 25264
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 27
+attr seedset 27
+itervar num 1
+itervar time 2.5
+config description "MM1 module k-times lbqf"
+config network lbqfkMM1
+config **.interArrivalTime "truncnormal(uniform(0.5s, 1.5s), uniform(0.25s, 0.75s))"
+config **.serviceTime 2.5s
+config **.c 1
+config **.capacity 10000
+config record-eventlog false
+config **.scalar-recording true
+config **.vector-recording true
+config repeat 4
+config seed-1-mt 33434
+config seed-2-mt 56673
+config seed-3-mt 23567
+config output-vector-file k_MM1_lbqf-1-2.5-results/3.vec
+config output-scalar-file k_MM1_lbqf-1-2.5-results/3.sca
+
+vector 0 lbqfkMM1.mm1[0] queueLength:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "queue length"
+vector 1 lbqfkMM1.mm1[0] util:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title resources
+0	1407 347817 5 37583 10 17092.5 13666 0 5398 36924041 132969193769
+1	349224 117843 16 37586 12.5 17095 6834 1 1 6834 6834
+

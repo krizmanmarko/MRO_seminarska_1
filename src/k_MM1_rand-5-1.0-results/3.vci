@@ -1,0 +1,88 @@
+file 236243 1669561401                                          
+version 3
+run k_MM1_rand-7-20221127-16:03:21-5740
+attr configname k_MM1_rand
+attr datetime 20221127-16:03:21
+attr datetimef 20221127-160321
+attr experiment k_MM1_rand
+attr inifile omnetpp.ini
+attr iterationvars "$time=1.0, $num=5, $0=33434, $1=56673, $2=23567"
+attr iterationvarsd time=1.0/num=5/33434/56673/23567
+attr iterationvarsf time=1.0,num=5,33434,56673,23567-
+attr measurement "$time=1.0, $num=5, $0=33434, $1=56673, $2=23567"
+attr network randkMM1
+attr processid 5740
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 7
+attr seedset 7
+itervar num 5
+itervar time 1.0
+config description "MM1 module k-times random"
+config network randkMM1
+config **.source.interArrivalTime "truncnormal(0.5s, 1.5s)"
+config **.serviceTime 1.0s
+config **.c 5
+config **.capacity 10000
+config record-eventlog false
+config **.scalar-recording true
+config **.vector-recording true
+config repeat 4
+config seed-1-mt 33434
+config seed-2-mt 56673
+config seed-3-mt 23567
+config output-vector-file k_MM1_rand-5-1.0-results/3.vec
+config output-scalar-file k_MM1_rand-5-1.0-results/3.sca
+
+vector 0 randkMM1.mm1[1] queueLength:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "queue length"
+vector 1 randkMM1.mm1[1] util:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title resources
+vector 2 randkMM1.mm1[3] util:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title resources
+vector 3 randkMM1.mm1[2] queueLength:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "queue length"
+vector 4 randkMM1.mm1[2] util:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title resources
+vector 5 randkMM1.mm1[4] util:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title resources
+vector 6 randkMM1.mm1[0] util:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title resources
+vector 7 randkMM1.mm1[0] queueLength:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "queue length"
+vector 8 randkMM1.mm1[4] queueLength:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "queue length"
+vector 9 randkMM1.mm1[3] queueLength:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "queue length"
+0	2387 17540 5 28402 10 3592.280990125614 626 0 4 455 649
+1	19927 28951 11 28411 11 3593.280990125614 1030 1 1 1030 1030
+2	48878 28605 14 28452 11.584809102375 3600.410342374974 1017 1 1 1017 1017
+3	77483 16801 32 28328 13.018720195624 3580.004885491903 596 0 4 432 614
+4	94284 27717 33 28441 13.681089134047 3598.688577915532 982 1 1 982 982
+5	122001 29306 39 28453 14.018720195624 3600.410342374974 1040 1 1 1040 1040
+6	151307 31194 50 28428 16.031392434741 3596.587079031018 1105 1 1 1105 1105
+7	182501 19859 76 28271 18.99385201398 3574.409623688254 702 0 4 501 699
+8	202360 17944 97 28077 21.206544379856 3556.15531972169 638 0 5 493 755
+9	220304 15937 306 28424 48.563028884098 3595.596714223684 568 0 3 376 472
+

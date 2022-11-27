@@ -1,0 +1,50 @@
+file 317733 1669545520                                          
+version 3
+run MMc-5-20221127-11:38:40-7588
+attr configname MMc
+attr datetime 20221127-11:38:40
+attr datetimef 20221127-113840
+attr experiment MMc
+attr inifile omnetpp.ini
+attr iterationvars "$mean=uniform(0.5s, 1.5s), $dev=0.5*(uniform(0.5s, 1.5s)), $time=1.0, $num=3, $0=45732, $1=35463, $2=67563"
+attr iterationvarsd mean=uniform(0.5s,_1.5s)/dev=0.5#2a(uniform(0.5s,_1.5s))/time=1.0/num=3/45732/35463/67563
+attr iterationvarsf mean=uniform(0.5s,_1.5s),dev=0.5#2a(uniform(0.5s,_1.5s)),time=1.0,num=3,45732,35463,67563-
+attr measurement "$mean=uniform(0.5s, 1.5s), $dev=0.5*(uniform(0.5s, 1.5s)), $time=1.0, $num=3, $0=45732, $1=35463, $2=67563"
+attr network MMc
+attr processid 7588
+attr repetition 1
+attr replication #1
+attr resultdir results
+attr runnumber 5
+attr seedset 5
+itervar dev "0.5*(uniform(0.5s, 1.5s))"
+itervar mean "uniform(0.5s, 1.5s)"
+itervar num 3
+itervar time 1.0
+config description "MMc module"
+config network MMc
+config MMc.source.interArrivalTime "truncnormal(uniform(0.5s, 1.5s), 0.5*(uniform(0.5s, 1.5s)))"
+config MMc.mmc.serviceTime 1.0s
+config MMc.mmc.c 3
+config MMc.mmc.capacity 10000
+config record-eventlog false
+config **.scalar-recording true
+config **.vector-recording true
+config repeat 4
+config seed-1-mt 45732
+config seed-2-mt 35463
+config seed-3-mt 67563
+config output-vector-file MMc-3-1.0-results/1.vec
+config output-scalar-file MMc-3-1.0-results/1.sca
+
+vector 0 MMc.mmc queueLength:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "queue length"
+vector 1 MMc.mmc util:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title resources
+0	1664 124180 0 23877 0 3599.219029767028 4415 0 8 4375 8699
+1	125844 191887 0 23884 0 3600.219029767028 6825 0 1 3894 3894
+

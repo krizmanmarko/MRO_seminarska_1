@@ -1,0 +1,71 @@
+version 3
+run k_MM1_rand-28-20221127-16:03:22-5740
+attr configname k_MM1_rand
+attr datetime 20221127-16:03:22
+attr datetimef 20221127-160322
+attr experiment k_MM1_rand
+attr inifile omnetpp.ini
+attr iterationvars "$time=2.5, $num=5, $0=53542, $1=75335, $2=34542"
+attr iterationvarsd time=2.5/num=5/53542/75335/34542
+attr iterationvarsf time=2.5,num=5,53542,75335,34542-
+attr measurement "$time=2.5, $num=5, $0=53542, $1=75335, $2=34542"
+attr network randkMM1
+attr processid 5740
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 28
+attr seedset 28
+itervar num 5
+itervar time 2.5
+config description "MM1 module k-times random"
+config network randkMM1
+config **.source.interArrivalTime "truncnormal(0.5s, 1.5s)"
+config **.serviceTime 2.5s
+config **.c 5
+config **.capacity 10000
+config record-eventlog false
+config **.scalar-recording true
+config **.vector-recording true
+config repeat 4
+config seed-1-mt 53542
+config seed-2-mt 75335
+config seed-3-mt 34542
+config output-vector-file k_MM1_rand-5-2.5-results/0.vec
+config output-scalar-file k_MM1_rand-5-2.5-results/0.sca
+
+par randkMM1.source typename "\"mySource\""
+par randkMM1.source maxJobs 10000
+par randkMM1.source numJobs 2
+par randkMM1.source interArrivalTime "truncnormal(0.5s, 1.5s)"
+attr unit s
+par randkMM1.source startTime 10s
+attr unit s
+par randkMM1.source stopTime 3600s
+attr unit s
+par randkMM1.sink typename "\"mySink\""
+par randkMM1.switch1 typename "\"randSwitch1\""
+par randkMM1.switch1 c 5
+par randkMM1.switch2 typename "\"switch2\""
+par randkMM1.mm1[0] typename "\"myMM1\""
+par randkMM1.mm1[0] capacity 10000
+par randkMM1.mm1[0] serviceTime 2.5s
+attr unit s
+par randkMM1.mm1[1] typename "\"myMM1\""
+par randkMM1.mm1[1] capacity 10000
+par randkMM1.mm1[1] serviceTime 2.5s
+attr unit s
+par randkMM1.mm1[2] typename "\"myMM1\""
+par randkMM1.mm1[2] capacity 10000
+par randkMM1.mm1[2] serviceTime 2.5s
+attr unit s
+par randkMM1.mm1[3] typename "\"myMM1\""
+par randkMM1.mm1[3] capacity 10000
+par randkMM1.mm1[3] serviceTime 2.5s
+attr unit s
+par randkMM1.mm1[4] typename "\"myMM1\""
+par randkMM1.mm1[4] capacity 10000
+par randkMM1.mm1[4] serviceTime 2.5s
+attr unit s
+par randkMM1 typename "\"randkMM1\""
+

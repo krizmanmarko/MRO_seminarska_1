@@ -1,0 +1,48 @@
+file 345892 1669561401                                          
+version 3
+run k_MM1_rand-25-20221127-16:03:21-5740
+attr configname k_MM1_rand
+attr datetime 20221127-16:03:21
+attr datetimef 20221127-160321
+attr experiment k_MM1_rand
+attr inifile omnetpp.ini
+attr iterationvars "$time=2.5, $num=1, $0=45732, $1=35463, $2=67563"
+attr iterationvarsd time=2.5/num=1/45732/35463/67563
+attr iterationvarsf time=2.5,num=1,45732,35463,67563-
+attr measurement "$time=2.5, $num=1, $0=45732, $1=35463, $2=67563"
+attr network randkMM1
+attr processid 5740
+attr repetition 1
+attr replication #1
+attr resultdir results
+attr runnumber 25
+attr seedset 25
+itervar num 1
+itervar time 2.5
+config description "MM1 module k-times random"
+config network randkMM1
+config **.source.interArrivalTime "truncnormal(0.5s, 1.5s)"
+config **.serviceTime 2.5s
+config **.c 1
+config **.capacity 10000
+config record-eventlog false
+config **.scalar-recording true
+config **.vector-recording true
+config repeat 4
+config seed-1-mt 45732
+config seed-2-mt 35463
+config seed-3-mt 67563
+config output-vector-file k_MM1_rand-1-2.5-results/1.vec
+config output-scalar-file k_MM1_rand-1-2.5-results/1.sca
+
+vector 0 randkMM1.mm1[0] queueLength:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "queue length"
+vector 1 randkMM1.mm1[0] util:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title resources
+0	1382 257616 5 28178 10 12817.5 10246 0 3688 18980921 46702720091
+1	258998 86892 16 28181 12.5 12820 5124 1 1 5124 5124
+
